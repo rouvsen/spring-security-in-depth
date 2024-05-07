@@ -1,2 +1,9 @@
 server:
   port: 8811
+
+application:
+  security:
+    jwt:
+      secret-key: secretKey
+      # a day
+      expiration: 86400000
