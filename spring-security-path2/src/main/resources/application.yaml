@@ -4,4 +4,4 @@ server:
 security:
   jwt:
     secret-key: my-secret-key
-    validity-minutes: 120
+    validity-minutes: 2
