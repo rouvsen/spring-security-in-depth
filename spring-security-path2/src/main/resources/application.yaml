@@ -1,2 +1,7 @@
 server:
   port: 8181
+
+security:
+  jwt:
+    secret-key: my-secret-key
+    validity-minutes: 120
