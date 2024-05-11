@@ -31,13 +31,6 @@ public class JwtUtil {
 
     private final JwtParser jwtParser;
 
-    @Bean
-    public JwtParser jwtParser() {
-        return Jwts.parserBuilder()
-                .setSigningKey(SECRET_KEY.getBytes(StandardCharsets.UTF_8))
-                .build();
-    }
-
     public String createToken(User user) {
         Date expirationDate = calculateExpirationDate(ACCESS_TOKEN_VALIDITY_MINUTES);
         Claims claims = buildClaims(user);
