@@ -39,6 +39,14 @@ public class JwtService {
         return userDetails.getUsername().equalsIgnoreCase(username) && !expirationDate.before(new Date());
     }
 
+    private String extractUsername(String token) {
+        return Jwts.claims().getSubject();
+    }
+
+    private Date extractExpiration(String token) {
+        return Jwts.claims().getExpiration();
+    }
+
     private String createToken(Map<String, Object> claims, String username) {
         return Jwts.builder()
                 .setClaims(claims)
